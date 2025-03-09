@@ -280,6 +280,9 @@ Each agent follows a similar pattern of using Azure OpenAI to generate completio
 
 ![Image](https://github.com/user-attachments/assets/b084329a-f7d7-4bf6-aa5c-980cd9a1e3b8)
 
+<details>
+<summary>Mearmaid Diagram</summary>
+
 ```mermaid
 classDiagram
     %% Main Application Classes
@@ -447,6 +450,7 @@ classDiagram
     Transaction --o TransactionService
     TransactionService --* TransactionsReportingAgent
 ```
+</details>
 
 The class diagram shows the key classes of the multi-agent banking application, including:
 
