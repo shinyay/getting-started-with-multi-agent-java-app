@@ -163,6 +163,7 @@ flowchart TB
     style AzureStorage fill:#fde68a,stroke:#333,stroke-width:2px
     style User fill:#fff,stroke:#333,stroke-width:2px
 ```
+</details>
 
 The architecture follows a vertical multi-agent design pattern where:
 
