@@ -4,6 +4,12 @@ This application is designed to explore the capabilities of generative AI within
 
 ## Description
 
+### Application Overview
+
+### Project Structure
+
+### Architecture
+
 ## Demo
 
 ## Features
