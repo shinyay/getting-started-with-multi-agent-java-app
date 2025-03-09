@@ -486,7 +486,7 @@ The frontend is a modern React application built with TypeScript that provides t
 
 #### Component Diagram
 
-![Frontend Architecture](docs/assets/frontend-architecture.png)
+![Frontend Architecture](https://github.com/user-attachments/assets/b845e55d-8d4a-4e90-849a-a8f39247145b)
 
 <details>
 <summary>Mermaid Diagram</summary>
