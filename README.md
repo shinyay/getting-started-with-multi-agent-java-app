@@ -185,6 +185,9 @@ This architecture enables a conversational interface to traditional banking serv
 ![Image](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
 
 
+<details>
+<summary>Mermaid Diagram</summary>
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -256,6 +259,7 @@ sequenceDiagram
     Copilot-->>Frontend: Return formatted response
     Frontend-->>User: Display response
 ```
+</details>
 
 This sequence diagram illustrates the flow of interactions in the application:
 
