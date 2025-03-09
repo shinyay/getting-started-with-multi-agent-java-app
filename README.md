@@ -87,6 +87,91 @@ The project consists of three main components:
 
 ### Architecture
 
+```mermaid
+flowchart TB
+    User(User)--"Chat/Uploads"-->Frontend
+
+    subgraph "Frontend Layer"
+        Frontend[React Frontend Application]
+    end
+
+    Frontend--API Requests-->CopilotBackend
+
+    subgraph "AI Orchestration Layer"
+        CopilotBackend[Copilot Backend]
+
+        subgraph "Multi-Agent System"
+            RouterAgent[Router Agent\nAnalyzes Intent]
+            PaymentAgent[Payment Agent]
+            AccountAgent[Account Agent]
+            TransactionAgent[Transaction History Agent]
+
+            RouterAgent-->PaymentAgent
+            RouterAgent-->AccountAgent
+            RouterAgent-->TransactionAgent
+        end
+
+        CopilotBackend-->RouterAgent
+
+        SemanticKernel[Semantic Kernel]
+        OpenAPIPlugin[OpenAPI Plugin]
+
+        PaymentAgent-->SemanticKernel
+        AccountAgent-->SemanticKernel
+        TransactionAgent-->SemanticKernel
+        SemanticKernel-->OpenAPIPlugin
+    end
+
+    subgraph "Azure AI Services"
+        AzureOpenAI[Azure OpenAI]
+        AzureDocIntel[Azure Document Intelligence]
+        AzureStorage[Azure Blob Storage]
+    end
+
+    subgraph "Business API Layer"
+        AccountAPI[Account Service API]
+        PaymentAPI[Payment Service API]
+        TransactionAPI[Transaction History Service API]
+    end
+
+    OpenAPIPlugin-->AccountAPI
+    OpenAPIPlugin-->PaymentAPI
+    OpenAPIPlugin-->TransactionAPI
+
+    CopilotBackend-->AzureOpenAI
+    PaymentAgent-->AzureDocIntel
+    AzureDocIntel-->AzureStorage
+
+    style Frontend fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style CopilotBackend fill:#d1e7dd,stroke:#333,stroke-width:2px
+    style RouterAgent fill:#d1e7dd,stroke:#333,stroke-width:2px
+    style PaymentAgent fill:#d1e7dd,stroke:#333,stroke-width:2px
+    style AccountAgent fill:#d1e7dd,stroke:#333,stroke-width:2px
+    style TransactionAgent fill:#d1e7dd,stroke:#333,stroke-width:2px
+    style AccountAPI fill:#dbeafe,stroke:#333,stroke-width:2px
+    style PaymentAPI fill:#dbeafe,stroke:#333,stroke-width:2px
+    style TransactionAPI fill:#dbeafe,stroke:#333,stroke-width:2px
+    style AzureOpenAI fill:#fde68a,stroke:#333,stroke-width:2px
+    style AzureDocIntel fill:#fde68a,stroke:#333,stroke-width:2px
+    style AzureStorage fill:#fde68a,stroke:#333,stroke-width:2px
+    style User fill:#fff,stroke:#333,stroke-width:2px
+```
+
+The architecture follows a vertical multi-agent design pattern where:
+
+1. Users interact with the React frontend interface for natural language conversations and document uploads.
+2. The Copilot Backend serves as the AI orchestration layer that hosts the multi-agent system.
+3. A Router Agent analyzes user intent and delegates tasks to specialized domain agents:
+   - Account Agent for handling account information requests
+   - Transaction History Agent for retrieving transaction records
+   - Payment Agent for processing payments and scanning invoices
+4. Each agent uses Semantic Kernel to reason and execute operations via tools.
+5. The OpenAPI Plugin maps natural language intents to structured API calls.
+6. Business API services handle the actual banking operations.
+7. Azure services provide the AI capabilities (Azure OpenAI) and document processing (Azure Document Intelligence).
+
+This architecture enables a conversational interface to traditional banking services by leveraging AI to understand user intent and orchestrate appropriate actions across multiple specialized microservices.
+
 ## Demo
 
 ## Features
