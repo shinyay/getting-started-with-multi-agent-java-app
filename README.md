@@ -1,5 +1,7 @@
 # Multi Agents Sample Application with Java and Semantic Kernel
 
+This application is designed to explore the capabilities of generative AI within the context of multi-agent architecture.
+
 ## Description
 
 ## Demo
