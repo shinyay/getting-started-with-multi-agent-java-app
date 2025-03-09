@@ -480,6 +480,125 @@ The class diagram shows the key classes of the multi-agent banking application, 
 
 Each agent follows a similar pattern of using Semantic Kernel to process natural language interactions, determine intent, and execute appropriate business logic through the OpenAPI plugin.
 
+### Frontend Architecture
+
+The frontend is a modern React application built with TypeScript that provides the user interface for interacting with the multi-agent banking system. It follows a component-based architecture with clear separation of concerns.
+
+#### Component Diagram
+
+![Frontend Architecture](docs/assets/frontend-architecture.png)
+
+<details>
+<summary>Mermaid Diagram</summary>
+
+```mermaid
+flowchart TB
+    User([User]) --interacts--> ReactApp
+
+    subgraph "Frontend Application"
+        ReactApp[React Application]
+        Router[React Router]
+        MsalAuth[MSAL Authentication]
+
+        subgraph "Page Components"
+            Layout[Layout]
+            ChatPage[Chat Page]
+            NoPage[404 Page]
+        end
+
+        subgraph "Core Components"
+            QuestionInput[Question Input]
+            AnswerDisplay[Answer Display]
+            AnalysisPanel[Analysis Panel]
+            Examples[Examples]
+            UserMessage[User Message]
+        end
+
+        subgraph "State Management"
+            ChatState[Chat State]
+            ConfigState[Configuration State]
+            AuthState[Authentication State]
+        end
+
+        subgraph "API Integration"
+            ApiClient[API Client]
+            Models[API Models]
+            Streaming[Streaming Handler]
+        end
+
+        ReactApp --> Router
+        ReactApp --> MsalAuth
+        Router --> Layout
+        Layout --> ChatPage
+        Layout --> NoPage
+
+        ChatPage --> QuestionInput
+        ChatPage --> AnswerDisplay
+        ChatPage --> AnalysisPanel
+        ChatPage --> Examples
+        ChatPage --> UserMessage
+
+        ChatPage --> ChatState
+        ChatPage --> ConfigState
+        ChatPage --> ApiClient
+
+        QuestionInput --> ApiClient
+        AnalysisPanel --> ApiClient
+
+        ApiClient --> Models
+        ApiClient --> Streaming
+        MsalAuth --> AuthState
+        ApiClient --> AuthState
+    end
+
+    subgraph "Backend Services"
+        CopilotBackend[Copilot Backend]
+        ContentService[Content Service]
+    end
+
+    ApiClient --HTTP Requests--> CopilotBackend
+    ApiClient --File Uploads--> ContentService
+
+    style ReactApp fill:#61dafb33,stroke:#61dafb,stroke-width:2px
+    style MsalAuth fill:#0078d733,stroke:#0078d7,stroke-width:2px
+    style ApiClient fill:#ff950033,stroke:#ff9500,stroke-width:2px
+    style CopilotBackend fill:#4caf5033,stroke:#4caf50,stroke-width:2px
+    style User fill:#f2f2f2,stroke:#333,stroke-width:2px
+```
+</details>
+
+#### Key Features and Components
+
+1. **Routing and Layout**
+   - Uses React Router for navigation
+   - Main layout with header, navigation, and content areas
+   - Chat page as the primary interface
+
+2. **Component Hierarchy**
+   - **QuestionInput**: Allows users to enter queries and upload attachments
+   - **AnswerDisplay**: Shows AI-generated responses with formatting and citations
+   - **UserChatMessage**: Displays user messages and attachments
+   - **AnalysisPanel**: Shows thought processes and supporting content
+   - **Examples**: Provides example queries for users to try
+
+3. **API Communication**
+   - RESTful API client for backend communication
+   - Support for streaming responses for real-time AI generation
+   - File upload functionality for document processing
+   - Authentication token handling
+
+4. **Authentication**
+   - Azure AD integration via MSAL (Microsoft Authentication Library)
+   - Token acquisition and management
+   - Conditional rendering based on authentication status
+
+5. **State Management**
+   - React hooks for local state management
+   - Configuration settings for AI behavior
+   - Chat history and streaming state management
+
+This frontend architecture provides a responsive and interactive user interface that enables natural conversation with the multi-agent banking system, seamlessly handling different types of queries, file uploads, and displaying AI-generated responses with supporting evidence.
+
 ## Demo
 
 ## Features
