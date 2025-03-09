@@ -89,7 +89,7 @@ The project consists of three main components:
 
 #### Flowchart
 
-![Image](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
+![Image](https://github.com/user-attachments/assets/9ec84997-9a95-4584-b2d6-539c64405a17)
 
 <details>
 <summary>Mermaid Diagram</summary>
@@ -181,6 +181,9 @@ The architecture follows a vertical multi-agent design pattern where:
 This architecture enables a conversational interface to traditional banking services by leveraging AI to understand user intent and orchestrate appropriate actions across multiple specialized microservices.
 
 #### Interaction Flow
+
+![Image](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
+
 
 ```mermaid
 sequenceDiagram
