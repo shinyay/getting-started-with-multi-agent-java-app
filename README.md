@@ -182,7 +182,7 @@ This architecture enables a conversational interface to traditional banking serv
 
 #### Interaction Flow
 
-![Image](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
+![Interactive Flow](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
 
 
 <details>
