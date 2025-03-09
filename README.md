@@ -87,6 +87,13 @@ The project consists of three main components:
 
 ### Architecture
 
+#### Flowchart
+
+![Image](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
+
+<details>
+<summary>Mermaid Diagram</summary>
+
 ```mermaid
 flowchart TB
     User(User)--"Chat/Uploads"-->Frontend
