@@ -89,7 +89,7 @@ The project consists of three main components:
 
 #### Flowchart
 
-![Image](https://github.com/user-attachments/assets/9ec84997-9a95-4584-b2d6-539c64405a17)
+![Flowchart](https://github.com/user-attachments/assets/9ec84997-9a95-4584-b2d6-539c64405a17)
 
 <details>
 <summary>Mermaid Diagram</summary>
