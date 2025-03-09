@@ -278,6 +278,8 @@ Each agent follows a similar pattern of using Azure OpenAI to generate completio
 
 ### Class Diagram
 
+![Image](https://github.com/user-attachments/assets/b084329a-f7d7-4bf6-aa5c-980cd9a1e3b8)
+
 ```mermaid
 classDiagram
     %% Main Application Classes
