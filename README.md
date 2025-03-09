@@ -1,4 +1,4 @@
-# Title
+#
 
 ## Description
 
@@ -16,6 +16,8 @@
 ## Installation
 
 ## References
+
+- [Azure Samples - Agent OpenAI Java Banking Assistant](https://github.com/Azure-Samples/agent-openai-java-banking-assistant)
 
 ## Licence
 
