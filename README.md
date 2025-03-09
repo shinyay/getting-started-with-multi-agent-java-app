@@ -6,6 +6,22 @@ This application is designed to explore the capabilities of generative AI within
 
 ### Application Overview
 
+This application is a multi-agent banking assistant powered by Java and Semantic Kernel, demonstrating how generative AI can transform traditional banking interactions into natural language conversations. The system allows users to:
+
+- Inquire about account balances and details
+- Review transaction history and search for specific transactions
+- Process payments and pay bills, including through invoice image uploads
+- Verify payment methods and account funds before transactions
+
+The application employs a vertical multi-agent architecture where specialized AI agents handle different domains of the banking experience:
+
+1. **Router Agent** - The central coordinator that analyzes user intent from chat messages and routes conversations to the appropriate specialist agent
+2. **Account Agent** - Provides information about bank accounts, balances, and payment methods
+3. **Transaction History Agent** - Retrieves and presents transaction history with filtering capabilities
+4. **Payment Agent** - Processes bill payments, including image-based invoice scanning using Azure Document Intelligence
+
+Each agent is equipped with specific tools to interact with banking microservices through OpenAPI definitions, providing a seamless experience where users can accomplish banking tasks through natural conversation rather than navigating traditional web interfaces.
+
 ### Project Structure
 
 The application follows a microservices architecture organized as follows:
@@ -35,7 +51,7 @@ app/
 │   │   ├── pom.xml             # Maven build configuration
 │   │   ├── manifests/          # Kubernetes manifests for deployment
 │   │   └── src/                # Source code for copilot backend
-│   └── semantickernel-openapi-plugin/ # Semantic Kernel OpenAI plugin
+│   └── semantickernel-openapi-plugin/ # Semantic Kernel OpenAPI plugin
 │       ├── pom.xml             # Maven build configuration
 │       └── src/                # Plugin source code
 └── frontend/                   # User interface application
