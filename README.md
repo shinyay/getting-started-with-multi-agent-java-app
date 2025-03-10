@@ -533,6 +533,7 @@ cd app
 - Open your browser and navigate to:
   - http://localhost
 
+### 🚦 Optional: Kubernetes Deployment
 
 
 ## Installation
