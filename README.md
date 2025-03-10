@@ -403,9 +403,16 @@ This frontend architecture provides a responsive and interactive user interface 
 #### ✅ Prerequisites
 - Azure Subscription
 - Azure CLI (az) installed
-- Azure Developer CLI (azd) installed (Installation Guide)
+- Azure Developer CLI (azd) installed ([Installation Guide](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-linux))
 - Docker installed
 - GitHub account (for CI/CD automation)
+
+#### 🛠️ Step 1: Clone and Navigate to Project
+
+```bash
+git clone <your-repo-url>
+cd getting-started-with-multi-agent-java-app
+```
 
 ## Installation
 
