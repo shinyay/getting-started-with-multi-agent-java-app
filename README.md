@@ -180,7 +180,7 @@ The architecture follows a vertical multi-agent design pattern where:
 
 This architecture enables a conversational interface to traditional banking services by leveraging AI to understand user intent and orchestrate appropriate actions across multiple specialized microservices.
 
-#### Interaction Flow
+#### Sequence Diagram
 
 ![Interactive Flow](https://github.com/user-attachments/assets/c4ab6904-e2fa-4f9a-963a-f7b2f8a049fe)
 
