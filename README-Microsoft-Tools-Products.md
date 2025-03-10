@@ -2,29 +2,6 @@
 
 This document provides detailed explanations of all the Microsoft tools and products used in the Multi-Agent Banking Assistant application.
 
-## Programming Languages and Frameworks
-
-### Java
-Java serves as the primary backend language for this project. It provides platform independence, strong typing, and extensive libraries which make it ideal for enterprise applications. In this project, Java powers all the backend microservices including the account, payment, transaction history, and copilot services.
-
-### Spring Boot
-Spring Boot is an open-source Java-based framework that simplifies the development of standalone, production-grade Spring-based applications. In this project, Spring Boot provides:
-- Auto-configuration of application components
-- Embedded server capabilities
-- Health monitoring and metrics
-- Simplified dependency management
-- RESTful API development capabilities for our microservices
-
-### TypeScript
-TypeScript is a strongly-typed superset of JavaScript that adds static types to the language. In this project, TypeScript powers the frontend application, providing better tooling, earlier detection of errors, and improved developer experience through features like autocompletion and interface definitions.
-
-### React
-React is a JavaScript library for building user interfaces, particularly single-page applications. In this project, React is used to build the frontend application, providing:
-- Component-based architecture for reusable UI elements
-- Virtual DOM for efficient rendering
-- Declarative approach to UI development
-- Integration with TypeScript for type safety
-
 ## AI and Cognitive Services
 
 ### Azure OpenAI
@@ -42,7 +19,7 @@ Azure Document Intelligence is an AI service that extracts text, key-value pairs
 
 ## Semantic Kernel
 
-Semantic Kernel is an open-source framework that integrates AI services like Azure OpenAI with conventional programming languages. In this project, it serves as the orchestration layer that:
+Semantic Kernel is an open-source framework developed by Microsoft that integrates AI services like Azure OpenAI with conventional programming languages. In this project, it serves as the orchestration layer that:
 - Enables the creation and management of AI agents
 - Connects natural language capabilities with programming primitives
 - Provides a plugin system for extending AI capabilities with traditional code
@@ -51,20 +28,6 @@ Semantic Kernel is an open-source framework that integrates AI services like Azu
 
 ## Containerization and Orchestration
 
-### Docker
-Docker is a platform that uses OS-level virtualization to deliver software in packages called containers. In this project, Docker is used to:
-- Package each microservice and the frontend into isolated containers
-- Ensure consistency across development, testing, and production environments
-- Simplify dependency management
-- Enable portable deployments across different environments
-
-### Docker Compose
-Docker Compose is a tool for defining and running multi-container Docker applications. In this project, it's used for:
-- Local development environment setup
-- Orchestrating the startup of all services in the correct order
-- Managing service dependencies and networking
-- Providing a consistent developer experience across different platforms
-
 ### Azure Container Apps
 Azure Container Apps is a fully managed serverless container service for building and deploying modern applications at scale. In this project, it:
 - Hosts all containerized services (frontend, copilot, account, payment, transaction)
@@ -72,13 +35,6 @@ Azure Container Apps is a fully managed serverless container service for buildin
 - Manages service-to-service communication
 - Handles HTTPS termination and routing
 - Integrates with Azure monitoring services
-
-### Kubernetes (for deployment manifests)
-While the primary deployment target is Azure Container Apps, the project includes Kubernetes manifests for:
-- Alternative deployment options on Azure Kubernetes Service (AKS)
-- Standardized deployment specifications
-- Declarative configuration of application services
-- Resource management (CPU, memory)
 
 ## Infrastructure as Code
 
@@ -90,28 +46,10 @@ Bicep is a domain-specific language (DSL) for deploying Azure resources declarat
 - Parameterize deployments for different environments
 - Organize infrastructure into modular components
 
-## Build and Dependency Management
-
-### Maven
-Maven is a build automation tool used primarily for Java projects. In this project, Maven:
-- Manages dependencies for all Java services
-- Defines build lifecycles and processes
-- Generates project documentation
-- Facilitates testing and packaging
-- Creates Docker-compatible artifacts
-
-### NPM (Node Package Manager)
-NPM is the package manager for JavaScript/TypeScript projects. In this project, NPM is used to:
-- Manage frontend dependencies
-- Run development scripts and commands
-- Define build processes for the React application
-- Manage TypeScript compilation
-- Handle asset optimization
-
 ## Continuous Integration and Deployment
 
 ### GitHub Actions
-GitHub Actions is a CI/CD platform that automates software workflows. In this project, it's used to:
+GitHub Actions is a CI/CD platform from Microsoft (via GitHub) that automates software workflows. In this project, it's used to:
 - Automatically build and test code on pull requests
 - Deploy infrastructure and applications to Azure
 - Run security and quality checks
@@ -172,7 +110,7 @@ Azure Blob Storage is Microsoft's object storage solution for the cloud. In this
 ## Development and Collaboration
 
 ### Visual Studio Code
-Visual Studio Code is a lightweight but powerful source code editor. Recommended for this project because it:
+Visual Studio Code is a lightweight but powerful source code editor from Microsoft. Recommended for this project because it:
 - Provides excellent support for JavaScript, TypeScript, and Java
 - Offers a rich extension ecosystem for development
 - Includes integrated terminal and debugging capabilities
@@ -180,7 +118,7 @@ Visual Studio Code is a lightweight but powerful source code editor. Recommended
 - Integrates with Git for version control
 
 ### GitHub
-GitHub is a web-based hosting service for version control using Git. In this project, it's used for:
+GitHub is a web-based hosting service for version control using Git (now owned by Microsoft). In this project, it's used for:
 - Source code management
 - Collaborative development through pull requests and issues
 - Integration with CI/CD workflows
@@ -189,14 +127,6 @@ GitHub is a web-based hosting service for version control using Git. In this pro
 
 ## Frontend Tooling
 
-### Vite
-Vite is a modern frontend build tool that provides a faster and leaner development experience. In this project, it:
-- Serves as the build system for the React application
-- Provides hot module replacement for rapid development
-- Optimizes assets for production
-- Manages TypeScript compilation
-- Handles environment variables and configuration
-
 ### Fluent UI
 Fluent UI is Microsoft's design system for creating modern, intuitive user interfaces. In this project, it provides:
 - Consistent design language across the application
@@ -204,16 +134,6 @@ Fluent UI is Microsoft's design system for creating modern, intuitive user inter
 - Responsive design capabilities
 - Theming and customization options
 - Integration with React
-
-## Miscellaneous
-
-### NGINX
-NGINX is a web server that can also be used as a reverse proxy, load balancer, and HTTP cache. In this project, it:
-- Serves the frontend React application
-- Handles request routing
-- Manages HTTP headers and caching
-- Provides TLS termination in container environments
-- Optimizes static asset delivery
 
 ## Azure Developer CLI (azd)
 
