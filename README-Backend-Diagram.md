@@ -1,4 +1,6 @@
-# Backend Architecture - Class Diagram
+# Backend Architecture
+
+## Class Diagram
 
 <details>
 <summary>Mearmaid Diagram</summary>
