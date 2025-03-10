@@ -22,6 +22,58 @@ The application employs a vertical multi-agent architecture where specialized AI
 
 Each agent is equipped with specific tools to interact with banking microservices through OpenAPI definitions, providing a seamless experience where users can accomplish banking tasks through natural conversation rather than navigating traditional web interfaces.
 
+### Tools and Products
+
+#### Programming Languages and Frameworks
+1. **Java** - Primary language for backend services.
+2. **Spring Boot** - Framework for building Java-based backend services.
+3. **TypeScript** - Primary language for the frontend application.
+4. **React** - JavaScript library for building user interfaces.
+5. **Semantic Kernel** - AI orchestration framework.
+
+#### AI and Cognitive Services
+1. **Azure OpenAI** - Provides AI capabilities for natural language processing.
+2. **Azure Document Intelligence** - Used for processing and extracting data from documents.
+
+#### Containerization and Orchestration
+1. **Docker** - Used for containerizing the application services.
+2. **Docker Compose** - Tool for defining and running multi-container Docker applications.
+3. **Azure Container Apps** - Managed service for running containerized applications.
+4. **Kubernetes** - Orchestration tool for managing containerized applications (used in deployment manifests).
+
+#### Infrastructure as Code
+1. **Bicep** - Used for defining and deploying Azure resources declaratively.
+
+#### Build and Dependency Management
+1. **Maven** - Build automation tool for Java projects.
+2. **NPM** - Package manager for JavaScript and TypeScript.
+
+#### Continuous Integration and Deployment
+1. **GitHub Actions** - CI/CD tool for automating workflows.
+
+#### Monitoring and Logging
+1. **Azure Monitor** - Provides monitoring and logging capabilities.
+2. **Application Insights** - Part of Azure Monitor, used for application performance management.
+3. **Log Analytics** - Used for querying and analyzing logs.
+
+#### Authentication and Security
+1. **Azure AD (Active Directory)** - Provides authentication and authorization services.
+2. **MSAL (Microsoft Authentication Library)** - Library for handling authentication in the frontend.
+
+#### Storage
+1. **Azure Blob Storage** - Used for storing files and documents.
+
+#### Development and Collaboration
+1. **Visual Studio Code** - Integrated development environment (IDE) for coding.
+2. **GitHub** - Platform for version control and collaboration.
+
+#### Frontend Tooling
+1. **Vite** - Build tool for frontend projects.
+2. **Fluent UI** - UI framework for building user interfaces.
+
+#### Miscellaneous
+1. **NGINX** - Web server for serving the frontend application.
+
 ### Project Structure
 
 The application follows a microservices architecture organized as follows:
