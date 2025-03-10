@@ -486,6 +486,12 @@ Deploying services (azd deploy)
 
 </details>
 
+#### 🔐 Step 6: Configure Authentication and Security
+Your application uses Azure AD and Managed Identities:
+
+- Managed Identities are provisioned automatically by Bicep templates.
+- Ensure Azure AD authentication is configured correctly in your frontend (MSAL) and backend (Managed Identity).
+
 ## Installation
 
 ## References
