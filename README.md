@@ -414,6 +414,12 @@ git clone <your-repo-url>
 cd getting-started-with-multi-agent-java-app
 ```
 
+#### 🔑 Step 2: Login to Azure
+
+```bash
+az login
+````
+
 ## Installation
 
 ## References
