@@ -492,6 +492,11 @@ Your application uses Azure AD and Managed Identities:
 - Managed Identities are provisioned automatically by Bicep templates.
 - Ensure Azure AD authentication is configured correctly in your frontend (MSAL) and backend (Managed Identity).
 
+#### 📈 Step 6: Monitoring and Logging
+
+- **Azure Monitor** and **Application Insights** are provisioned automatically.
+- Use Azure Portal → Application Insights to monitor application performance and logs.
+
 ## Installation
 
 ## References
