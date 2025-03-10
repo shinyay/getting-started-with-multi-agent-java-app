@@ -447,6 +447,44 @@ After deployment, azd will output URLs and resource names. You can also verify r
 - **Azure Storage Account:** Check blob storage.
 - **Application Insights:** Monitor application performance and logs.
 
+<details>
+
+<summary>Click to expand</summary>
+```bash
+  (✓) Done: Resource group: rg-shinyay-demo (3.564s)
+  (✓) Done: Log Analytics workspace: log-duqxwgc4mdkmm (20.095s)
+  (✓) Done: Storage account: stduqxwgc4mdkmm (25.746s)
+  (✓) Done: Application Insights: appi-duqxwgc4mdkmm (4.182s)
+  (✓) Done: Azure OpenAI: cog-duqxwgc4mdkmm (40.139s)
+  (✓) Done: Azure AI Services Model Deployment: cog-duqxwgc4mdkmm/gpt-4o (40.563s)
+  (✓) Done: Document Intelligence: cog-fr-duqxwgc4mdkmm (40.446s)
+  (✓) Done: Container Registry: crduqxwgc4mdkmm (38.556s)
+  (✓) Done: Container Apps Environment: cae-duqxwgc4mdkmm (55.455s)
+  (✓) Done: Container App: ca-transaction-duqxwgc4mdkmm (31.304s)
+  (✓) Done: Container App: ca-account-duqxwgc4mdkmm (31.581s)
+  (✓) Done: Container App: ca-payment-duqxwgc4mdkmm (33.404s)
+  (✓) Done: Container App: ca-copilot-duqxwgc4mdkmm (26.941s)
+  (✓) Done: Container App: ca-web-duqxwgc4mdkmm (32.686s)
+
+Deploying services (azd deploy)
+
+  (✓) Done: Deploying service account
+  - Endpoint: https://ca-account-duqxwgc4mdkmm.internal.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
+
+  (✓) Done: Deploying service copilot
+  - Endpoint: https://ca-copilot-duqxwgc4mdkmm.internal.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
+
+  (✓) Done: Deploying service payment
+  - Endpoint: https://ca-payment-duqxwgc4mdkmm.internal.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
+
+  (✓) Done: Deploying service transaction
+  - Endpoint: https://ca-transaction-duqxwgc4mdkmm.internal.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
+
+  (✓) Done: Deploying service web
+  - Endpoint: https://ca-web-duqxwgc4mdkmm.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
+```
+</details>
+
 ## Installation
 
 ## References
