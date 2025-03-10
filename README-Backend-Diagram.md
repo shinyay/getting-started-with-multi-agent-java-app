@@ -1,5 +1,98 @@
 # Backend Architecture
 
+## Sequence Diagram
+
+<details>
+<summary>Mermaid Diagram</summary>
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as Frontend (React)
+    participant Copilot as Copilot Backend
+    participant Router as Router Agent
+    participant Account as Account Agent
+    participant Transaction as Transaction Agent
+    participant Payment as Payment Agent
+    participant OpenAI as Azure OpenAI
+    participant DocIntel as Document Intelligence
+    participant APIs as Business APIs
+
+    User->>Frontend: Sends message or uploads document
+    Frontend->>Copilot: Forwards request
+
+    Copilot->>OpenAI: Request conversation history analysis
+    OpenAI-->>Copilot: Returns analysis
+
+    Copilot->>Router: Determine user intent
+    Router->>OpenAI: Extract intent from message
+    OpenAI-->>Router: Return intent classification
+
+    alt Account Information Request
+        Router->>Account: Route to Account Agent
+        Account->>OpenAI: Generate completion with tools
+        OpenAI-->>Account: Suggest tool calls
+        Account->>APIs: Call Account API
+        APIs-->>Account: Return account data
+        Account->>OpenAI: Format response
+        OpenAI-->>Account: Generate final response
+        Account-->>Router: Return formatted response
+
+    else Transaction History Request
+        Router->>Transaction: Route to Transaction Agent
+        Transaction->>OpenAI: Generate completion with tools
+        OpenAI-->>Transaction: Suggest tool calls
+        Transaction->>APIs: Call Transaction API
+        APIs-->>Transaction: Return transaction data
+        Transaction->>OpenAI: Format response
+        OpenAI-->>Transaction: Generate final response
+        Transaction-->>Router: Return formatted response
+
+    else Payment Request
+        Router->>Payment: Route to Payment Agent
+
+        alt Document Upload
+            Payment->>DocIntel: Process uploaded invoice
+            DocIntel-->>Payment: Extract invoice data
+            Payment->>OpenAI: Validate and format data
+            OpenAI-->>Payment: Formatted invoice data
+        end
+
+        Payment->>OpenAI: Generate completion with tools
+        OpenAI-->>Payment: Suggest tool calls
+        Payment->>APIs: Verify funds & payment methods
+        APIs-->>Payment: Return verification
+        Payment->>APIs: Submit payment
+        APIs-->>Payment: Confirm payment status
+        Payment->>OpenAI: Format response
+        OpenAI-->>Payment: Generate final response
+        Payment-->>Router: Return formatted response
+
+    else Unknown Intent
+        Router-->>Copilot: Request clarification
+    end
+
+    Router-->>Copilot: Return agent response
+    Copilot-->>Frontend: Return formatted response
+    Frontend-->>User: Display response
+```
+</details>
+
+This sequence diagram illustrates the flow of interactions in the application:
+
+1. **Initial Request Processing**: The user interacts with the frontend, which forwards the request to the Copilot Backend.
+
+2. **Intent Determination**: The Router Agent uses Azure OpenAI to analyze the user's intent and routes the request to the appropriate specialist agent.
+
+3. **Agent-Specific Processing**:
+   - For account information, the Account Agent communicates with both Azure OpenAI and the Account API to gather and present information.
+   - For transaction history, the Transaction Agent retrieves and formats transaction data.
+   - For payments, the Payment Agent might process document uploads, validate payment details, and execute transactions.
+
+4. **Response Flow**: The response flows back through the system to the user with appropriate formatting and presentation.
+
+Each agent follows a similar pattern of using Azure OpenAI to generate completions with tools, calling the appropriate business APIs, and formatting responses for the user, creating a consistent and natural conversational experience.
+
 ## Class Diagram
 
 <details>
