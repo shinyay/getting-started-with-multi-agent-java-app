@@ -1,4 +1,6 @@
-## Frontend Architecture - Component Diagram
+# Frontend Architecture
+
+## Component Diagram
 
 <details>
 <summary>Mermaid Diagram</summary>
