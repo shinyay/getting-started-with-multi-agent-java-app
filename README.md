@@ -201,7 +201,7 @@ This sequence diagram illustrates the flow of interactions in the application:
 
 Each agent follows a similar pattern of using Azure OpenAI to generate completions with tools, calling the appropriate business APIs, and formatting responses for the user, creating a consistent and natural conversational experience.
 
-### Class Diagram
+#### Class Diagram
 
 ![Class Diagram](https://github.com/user-attachments/assets/b084329a-f7d7-4bf6-aa5c-980cd9a1e3b8)
 
