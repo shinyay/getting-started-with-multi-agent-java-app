@@ -442,10 +442,10 @@ This command will:
 #### 📦 Step 5: Verify Deployment
 After deployment, azd will output URLs and resource names. You can also verify resources in the Azure Portal:
 
-- Azure Container Apps: Check deployed services (frontend, backend, APIs).
-- Azure OpenAI & Document Intelligence: Verify AI services.
-- Azure Storage Account: Check blob storage.
-- Application Insights: Monitor application performance and logs.
+- **Azure Container Apps:** Check deployed services (frontend, backend, APIs).
+- **Azure OpenAI & Document Intelligence:** Verify AI services.
+- **Azure Storage Account:** Check blob storage.
+- **Application Insights:** Monitor application performance and logs.
 
 ## Installation
 
