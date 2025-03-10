@@ -398,6 +398,15 @@ This frontend architecture provides a responsive and interactive user interface 
 
 ## Usage
 
+### Step-by-Step Deployment Guide (Using Azure Developer CLI)
+
+#### ✅ Prerequisites
+- Azure Subscription
+- Azure CLI (az) installed
+- Azure Developer CLI (azd) installed (Installation Guide)
+- Docker installed
+- GitHub account (for CI/CD automation)
+
 ## Installation
 
 ## References
