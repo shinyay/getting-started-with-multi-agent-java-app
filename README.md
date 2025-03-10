@@ -398,7 +398,18 @@ This frontend architecture provides a responsive and interactive user interface 
 
 ## Usage
 
-### Step-by-Step Deployment Guide (Using Azure Developer CLI)
+### 🚀 Step-by-Step Deployment Guide (Using Azure Developer CLI)
+
+🎯 Overview of `azd up` Steps
+|Step| Description | What Happens|
+|---|---|---|
+|1| Authentication | Checks Azure login (azd auth login)|
+|2| Environment Setup | Initializes or verifies Azure environment|
+|3| Infrastructure Provisioning | Deploys Azure resources using Bicep|
+|4| Application Build | Builds Docker images|
+|5| Push Images | Pushes images to Azure Container Registry|
+|6| Application Deployment | Deploys apps to Azure Container Apps|
+|7| Output Information | Provides deployment details and URLs|
 
 #### ✅ Prerequisites
 - Azure Subscription
@@ -496,6 +507,31 @@ Your application uses Azure AD and Managed Identities:
 
 - **Azure Monitor** and **Application Insights** are provisioned automatically.
 - Use Azure Portal → Application Insights to monitor application performance and logs.
+
+### 🔄 Optional: Local Development with Docker Compose
+
+#### Step 1: Login to Azure
+
+```bash
+az login
+```
+
+### Step 2: Local Development with Docker Compose
+
+```bash
+cd app
+./start-compose.sh
+```
+or
+```shell
+cd app
+./start-compose.fish
+```
+
+### Step 3. Browse the App
+
+- Open your browser and navigate to:
+  - http://localhost
 
 ## Installation
 
