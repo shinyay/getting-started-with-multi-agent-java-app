@@ -433,6 +433,14 @@ Run the following command to provision Azure resources and deploy your applicati
 azd up
 ```
 
+This command will:
+
+- Provision Azure resources defined in main.bicep
+- Build and push Docker images to Azure Container Registry
+- Deploy your application services to Azure Container Apps
+
+
+
 ## Installation
 
 ## References
