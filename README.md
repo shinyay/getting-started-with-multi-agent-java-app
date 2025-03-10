@@ -448,8 +448,8 @@ After deployment, azd will output URLs and resource names. You can also verify r
 - **Application Insights:** Monitor application performance and logs.
 
 <details>
-
 <summary>Click to expand</summary>
+
 ```bash
   (✓) Done: Resource group: rg-shinyay-demo (3.564s)
   (✓) Done: Log Analytics workspace: log-duqxwgc4mdkmm (20.095s)
@@ -483,6 +483,7 @@ Deploying services (azd deploy)
   (✓) Done: Deploying service web
   - Endpoint: https://ca-web-duqxwgc4mdkmm.greenbeach-f4c6d4b9.eastus2.azurecontainerapps.io/
 ```
+
 </details>
 
 ## Installation
