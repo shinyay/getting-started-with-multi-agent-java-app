@@ -534,7 +534,16 @@ cd app
   - http://localhost
 
 ### 🚦 Optional: Kubernetes Deployment
+This project includes Kubernetes manifests. To deply to `Azure Kubernetes Services`(AKS):
 
+1. Ensure AKS Cluster is provisioned.
+2. Update image references in manifests.
+3. Deploy the application using Kubernetes manifests.
+
+```bash
+kubectl apply -f ./app/copilot/copilot-backend/manifests/
+kubectl apply -f ./app/frontend/manifests/frontend-deployment.tmpl.yml
+```
 
 ## Installation
 
