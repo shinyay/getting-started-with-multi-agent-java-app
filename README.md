@@ -76,6 +76,8 @@ Each agent is equipped with specific tools to interact with banking microservice
 
 ### Project Structure
 
+#### Application folder
+
 The application follows a microservices architecture organized as follows:
 
 ```
@@ -136,6 +138,62 @@ The project consists of three main components:
    - React/TypeScript
    - Modern frontend tooling (Vite)
    - Containerized for deployment
+
+#### Infra folder
+
+The infrastructure is defined using Bicep templates (Infrastructure as Code) and organized as follows:
+
+```
+infra/
+├── main.bicep                  # Main Bicep deployment template
+├── main.parameters.json        # Parameters for the main Bicep deployment
+├── app/                        # Application-specific infrastructure definitions
+│   ├── account.bicep           # Account service infrastructure
+│   ├── copilot.bicep           # Copilot service infrastructure
+│   ├── payment.bicep           # Payment service infrastructure
+│   ├── transaction.bicep       # Transaction history service infrastructure
+│   └── web.bicep               # Web frontend infrastructure
+└── shared/                     # Shared infrastructure components
+    ├── abbreviations.json      # Resource naming abbreviations
+    ├── backend-dashboard.bicep # Dashboard for backend monitoring
+    ├── ai/                     # AI service definitions
+    │   └── cognitiveservices.bicep  # Azure Cognitive Services (OpenAI, Document Intelligence)
+    ├── host/                   # Container hosting infrastructure
+    │   ├── container-app-upsert.bicep    # Container App creation/update
+    │   ├── container-app.bicep           # Container App definition
+    │   ├── container-apps-environment.bicep  # Container Apps Environment
+    │   ├── container-apps.bicep          # Container Apps orchestration
+    │   └── container-registry.bicep      # Container Registry definition
+    ├── monitor/                # Monitoring infrastructure
+    │   ├── applicationinsights-dashboard.bicep  # Application Insights dashboard
+    │   ├── applicationinsights.bicep           # Application Insights definition
+    │   ├── loganalytics.bicep                 # Log Analytics workspace
+    │   └── monitoring.bicep                   # Monitoring resources orchestration
+    ├── security/               # Security infrastructure
+    │   ├── keyvault-access.bicep             # Key Vault access policies
+    │   ├── keyvault-secret.bicep             # Key Vault secrets
+    │   ├── keyvault.bicep                    # Key Vault definition
+    │   ├── registry-access.bicep             # Container Registry access
+    │   └── role.bicep                        # Azure RBAC role assignments
+    └── storage/                # Storage infrastructure
+        └── storage-account.bicep              # Azure Storage Account definition
+```
+
+This infrastructure code defines the deployment of all Azure cloud resources required by the application:
+
+1. **Application Services** - Each application component (account, payment, transaction, copilot, web) has a dedicated Bicep template in the `app/` folder that defines its specific infrastructure needs.
+
+2. **AI Services** - Templates for provisioning Azure OpenAI and Document Intelligence services.
+
+3. **Container Hosting** - Templates for Container Apps Environment, Container Registry, and Container App definitions that host the application's microservices.
+
+4. **Monitoring** - Application Insights, Log Analytics, and dashboard resources for observability.
+
+5. **Security** - Key Vault for secrets management, role-based access control (RBAC), and registry access configurations.
+
+6. **Storage** - Azure Storage Account configuration for blob storage needs.
+
+The main Bicep template (`main.bicep`) orchestrates the deployment of all these components, while the parameters file (`main.parameters.json`) provides configuration values that can be customized for different environments.
 
 ### Architecture
 
