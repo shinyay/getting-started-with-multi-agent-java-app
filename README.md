@@ -418,7 +418,20 @@ cd getting-started-with-multi-agent-java-app
 
 ```bash
 az login
-````
+```
+
+#### ⚙️ Step 3: Initialize Azure Developer CLI Environment
+
+```bash
+azd init
+```
+
+#### 🏗️ Step 4: Provision Infrastructure and Deploy Application
+Run the following command to provision Azure resources and deploy your application:
+
+```bash
+azd up
+```
 
 ## Installation
 
