@@ -516,7 +516,7 @@ Your application uses Azure AD and Managed Identities:
 az login
 ```
 
-### Step 2: Local Development with Docker Compose
+#### Step 2: Local Development with Docker Compose
 
 ```bash
 cd app
@@ -528,10 +528,12 @@ cd app
 ./start-compose.fish
 ```
 
-### Step 3. Browse the App
+#### Step 3. Browse the App
 
 - Open your browser and navigate to:
   - http://localhost
+
+
 
 ## Installation
 
